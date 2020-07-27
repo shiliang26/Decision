@@ -258,8 +258,10 @@ Page({
             if (g.neighbors.indexOf(i) == -1)
               continue      //当前条目不在邻居集合中
             //var pick=maxq
-            pick = snapshot.docs[i].current_choice.length - 1
-            choice = snapshot.docs[i].current_choice[pick]
+            lengths = snapshot.docs[i].current_choice.length
+            if(snapshot.docs[i].round[lengths-1] != round)
+              continue
+            choice = snapshot.docs[i].current_choice[lengths - 1]
             local_options[choice - 1]++
             //console.log('Player', i, 'chose cave', choice)
           }
