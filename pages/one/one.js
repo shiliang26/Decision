@@ -1,0 +1,61 @@
+//index.js
+Page({
+  data: {
+    listData: [
+      { "code": "01", "text": "text1", "type": "type1" },
+      { "code": "02", "text": "text2", "type": "type2" },
+      { "code": "03", "text": "text3", "type": "type3" },
+      { "code": "04", "text": "text4", "type": "type4" },
+      { "code": "05", "text": "text5", "type": "type5" },
+      { "code": "06", "text": "text6", "type": "type6" },
+      { "code": "07", "text": "text7", "type": "type7" },
+      { "code": "08", "text": "text8", "type": "type8" },
+      { "code": "09", "text": "text7", "type": "type7" },
+      { "code": "10", "text": "text7", "type": "type7" },
+      { "code": "11", "text": "text7", "type": "type7" },
+      { "code": "12", "text": "text7", "type": "type7" },
+      { "code": "13", "text": "text7", "type": "type7" },
+      { "code": "14", "text": "text7", "type": "type7" },
+      { "code": "15", "text": "text1", "type": "type1" },
+      { "code": "16", "text": "text2", "type": "type2" },
+      { "code": "17", "text": "text3", "type": "type3" },
+      { "code": "18", "text": "text4", "type": "type4" },
+      { "code": "19", "text": "text5", "type": "type5" },
+      { "code": "20", "text": "text6", "type": "type6" },
+      { "code": "21", "text": "text7", "type": "type7" },
+      { "code": "22", "text": "text8", "type": "type8" },
+      { "code": "23", "text": "text7", "type": "type7" },
+      { "code": "24", "text": "text7", "type": "type7" },
+      { "code": "25", "text": "text7", "type": "type7" },
+      { "code": "26", "text": "text7", "type": "type7" },
+      { "code": "27", "text": "text7", "type": "type7" },
+      { "code": "28", "text": "text7", "type": "type7" },
+      { "code": "29", "text": "text1", "type": "type1" },
+      { "code": "30", "text": "text2", "type": "type2" },
+      { "code": "31", "text": "text3", "type": "type3" },
+      { "code": "32", "text": "text4", "type": "type4" },
+      { "code": "33", "text": "text5", "type": "type5" },
+      { "code": "34", "text": "text6", "type": "type6" },
+      { "code": "35", "text": "text7", "type": "type7" },
+      { "code": "36", "text": "text8", "type": "type8" },
+      { "code": "37", "text": "text7", "type": "type7" },
+      { "code": "38", "text": "text7", "type": "type7" },
+      { "code": "39", "text": "text7", "type": "type7" },
+      { "code": "40", "text": "text7", "type": "type7" },
+      { "code": "41", "text": "text7", "type": "type7" },
+      { "code": "42", "text": "text7", "type": "type7" },
+      { "code": "43", "text": "text1", "type": "type1" },
+      { "code": "44", "text": "text2", "type": "type2" },
+      { "code": "45", "text": "text3", "type": "type3" },
+      { "code": "46", "text": "text4", "type": "type4" },
+      { "code": "47", "text": "text5", "type": "type5" },
+      { "code": "48", "text": "text6", "type": "type6" },
+      { "code": "49", "text": "text7", "type": "type7" },
+      { "code": "50", "text": "text8", "type": "type8" }
+    ]
+  },
+  onLoad: function () {
+    console.log('onLoad')
+  }
+
+})

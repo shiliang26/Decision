@@ -1,0 +1,95 @@
+<!--index.wxml-->
+
+<popup
+  class="pop"
+ 	id='popup'
+  title1='End of round'
+  title2='Game Over'
+  congrats='恭喜你！通过了 {{round}} 轮'
+  cave_correct='选择正确，生命值+2'
+  cave_wrong='选择错误，生命值-2'
+  extra_result='从众奖励{{extra}}点生命值'
+  extra_negative = '无从众奖励'
+  result='当前生命值{{percent}}'
+  btn_back='回到首页'
+  change="{{change}}"
+  wait="{{wait}}"
+  flag="{{flag}}"
+  extra="{{extra}}"
+ ></popup>
+
+
+
+<view class='countdown'>
+  <text>倒计时: {{second}}</text>
+</view>
+
+ <view class='iden'>
+ <text>本局游戏你的身份是 {{iden}}</text>
+ </view>
+ <view class='best_worst'>
+ <text wx:if="{{id_no==2}}">本轮最优选择为山洞 {{best+1}}</text>
+ </view>
+
+ <view class='column'>
+ <text class='title'> 生命值</text>
+ <progress class='slider' percent="{{percent}}" show-info active='{{isDown}}' stroke-width="14" />
+</view>
+
+
+<view class="container">
+	<view class="title">
+		 <text>邻居选择情况（当前共{{non}}名邻居）</text>
+	</view>
+  <canvas canvas-id="columnCanvas" class="canvas" >
+  <cover-view></cover-view>
+  </canvas>
+</view>
+
+<view class='adduserorder'>
+  <view class wx:if="{{choice != 1 && final_choice != 1}}">
+     <image class='caveone' catchtap="caveone"  src="../../images/cave.jpeg" ></image>
+  </view>
+  <view wx:elif="{{choice == 1 && final_choice != 1}}">
+      <image class='caveone' catchtap="caveone" src="../../images/cave_picked.jpg"></image>
+  </view>
+  <view wx:elif="{{choice != 1 && final_choice == 1}}">
+      <image class='caveone' catchtap="caveone" src="../../images/final.jpg"></image>
+  </view>
+  <view wx:elif="{{choice == 1 && final_choice == 1}}">
+      <image class='caveone' catchtap="caveone" src="../../images/final_picked.jpg"></image>
+  </view>
+
+  <view class wx:if="{{choice != 2 && final_choice != 2}}">
+     <image class='cavetwo' catchtap="cavetwo"  src="../../images/cave.jpeg" ></image>
+  </view>
+  <view wx:elif="{{choice == 2 && final_choice != 2}}">
+      <image class='cavetwo' catchtap="cavetwo" src="../../images/cave_picked.jpg"></image>
+  </view>
+  <view wx:elif="{{choice != 2 && final_choice == 2}}">
+      <image class='cavetwo' catchtap="cavetwo" src="../../images/final.jpg"></image>
+  </view>
+  <view wx:elif="{{choice == 2 && final_choice == 2}}">
+      <image class='cavetwo' catchtap="cavetwo" src="../../images/final_picked.jpg"></image>
+  </view>
+</view>
+
+<view class='textls'>
+<view class='viewclass'>
+  <text class='viewview'>山洞一</text>
+</view>
+<view class='viewclass'>
+  <text class='viewview'>山洞二</text>
+</view>
+
+</view>
+
+ <button class="confirm" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+  disabled="{{disabled}}" bindtap="confirm"> 确认选择 
+</button>
+
+<!--
+ <button class="confirm" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+  disabled="{{disabled}}" bindtap="interrupt"> 中止运行
+</button>
+-->

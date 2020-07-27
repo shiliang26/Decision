@@ -1,0 +1,10 @@
+/* pages/help/help.wxss */
+.title{
+  text-align: center;
+  font-size:50rpx;
+}
+.body{
+  font-size:30rpx;
+  line-height:2em;
+  text-indent: 10em;
+}

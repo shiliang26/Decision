@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+
+
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
+
+  <view class>
+     <image class='net' src="../../images/connect.png" ></image>
+  </view>
+
+<!--
+ <button class="btn2" type="default" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+ bindtap="logbtn2"> 帮助
+</button>
+-->
+
+
+<view class = "inputbox">
+ <button type = "primary" size="{{defaultSize}}" bindtap = "modalinput" > 
+ <text wx:if="{{!nameinput}}">输入你的名字</text>
+  <text wx:else>修改名字</text> </button>
+  <view>
+  <modal id = "modal"
+  hidden = "{{hiddenmodalput}}"
+  title = "输入你的名字"
+  confirm - text = "提交"
+  cancel - text = "取消"
+  bindcancel = "cancel"
+  bindconfirm = "confirm_name" >
+  <input type = 'text' placeholder = "名字" auto - focus bindinput = "inputname"> </input> 
+  </modal>
+  </view>
+</view>  
+
+<view>  
+  <button class="btn1" type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+  disabled="{{(!allowprep) || (!nameinput)}}" bindtap="start" hover-class="other-button-hover">
+  <text wx:if="{{!waiting}}">准备</text>
+  <text wx:else>正在等待游戏开始...</text>
+  </button>
+</view>  

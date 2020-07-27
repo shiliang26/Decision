@@ -1,0 +1,81 @@
+/**index.wxss**/
+
+.countdown{
+  margin-top:20rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+}
+
+.caveone{
+  top: 20rpx;
+  display: flex;
+  width: 135rpx;
+  height: 135rpx;
+  flex-direction: row;
+  margin-right:110rpx;
+}
+.cavetwo{
+  top: 20rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 135rpx;
+  height: 135rpx;
+}
+
+.adduserorder{
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+}
+
+.viewclass{
+  width: 275rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.textls{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+}
+.column{
+  margin-top:30rpx;
+  text-align: center;
+}
+.slider{
+  margin-left:50rpx;
+  text-align: center;
+}
+.title {
+	text-align: center;
+	position: relative;
+	margin-top: 30rpx;
+	margin-bottom: 20rpx;
+}
+.iden{
+	text-align: center;
+	position: relative;
+	margin-top: 30rpx;
+	margin-bottom: 20rpx;
+}
+.best_worst{
+	text-align: center;
+	position: relative;
+	margin-top: 50rpx;
+	margin-bottom: 20rpx;
+}
+.pop{
+  z-index:999
+}
+.canvas{
+  z-index:1
+}
+.confirm{
+  margin-top:50rpx;
+  width:300rpx;
+}
