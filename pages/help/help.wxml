@@ -1,7 +1,9 @@
 <!--pages/help/help.wxml-->
   <view class="title">
     <text class="title">游戏背景和规则介绍</text>
-  </view>               
+  </view> 
+
+  <icon class="myicon" type="success" size="50"></icon>              
 <view class="body">
 <text>
 游戏规则设计：</text>

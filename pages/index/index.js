@@ -110,6 +110,7 @@ Page({
           }
         },
         onError: function (err) {
+          that.getWatcher(that)
           console.error('the watch closed because of error', err)
         }
       })

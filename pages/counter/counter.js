@@ -43,7 +43,7 @@ Page({
     id_no:0,
     best:0,
     change:0,
-    options: [0,0]
+    options: [0,0],
   },
 
   updateLife:function(){//更新生命值
@@ -56,7 +56,7 @@ Page({
     var change=this.data.change
     var id_no=this.data.id_no
     var extra = this.data.extra
-    var change_temp = (g.value)[(round - 1) % 20].cave[final_choice - 1] * 2
+    var change_temp = (g.value)[(round - 1) % 20].cave[final_choice - 1] * 5
     if(final_choice==0){
       that.setData({
         percent:percent-5,    //不做选择会产生惩罚.     //2020.3.8更新：目前有默认选择，不会再有不选的情况。保留备用。
@@ -67,7 +67,7 @@ Page({
     else{
       that.setData({
         change: change_temp,//定这个量主要是为了给弹出窗口传值
-        percent: percent + change_temp + extra,
+        percent: percent + change_temp + extra * 2,
         non_relevant: non_relevant + extra
       })
     }
@@ -84,16 +84,15 @@ Page({
     var id_no = this.data.id_no
     var options = this.data.options
     if(second == 0) {
+      if (id_no == 0 && amongMajority(final_choice, options)) {
+        that.setData({
+          extra: 1
+        })
+      }
       that.updateLife(that)
       that.countdown_wait(that)
       return
      }
-    
-    if (id_no == 0 && second == 1 && amongMajority(final_choice, options)) {
-      that.setData({
-        extra: 1
-      })
-    }
     var time = setTimeout(function () {
       that.setData({
        second: second - 1
@@ -259,7 +258,7 @@ Page({
               continue      //当前条目不在邻居集合中
             //var pick=maxq
             lengths = snapshot.docs[i].current_choice.length
-            if(snapshot.docs[i].round[lengths-1] != round)
+            if(snapshot.docs[i].round[lengths-1] != round || lengths == null)
               continue
             choice = snapshot.docs[i].current_choice[lengths - 1]
             local_options[choice - 1]++
@@ -279,7 +278,7 @@ Page({
           })
         },
         onError: function (err) {
-          console.error('the watch closed because of error', err)
+          that.getWatcher(that)
           watcher.close()
         }
       })
@@ -307,6 +306,7 @@ Page({
       choice:1
     })
     console.log("Picked Cave 1")
+    that.confirm(that)
   },
 
   cavetwo: function () {
@@ -316,6 +316,7 @@ Page({
       choice: 2
     })
     console.log("Picked Cave 2")
+    that.confirm(that)
   },
   
   //确认选择，将choice赋给final_choice
@@ -326,16 +327,16 @@ Page({
     var round=this.data.round
     var percent = this.data.percent
     var non_relevant = this.data.non_relevant
+    var d1 = new Date()
     console.log('Confirmed Cave',choice)
     console.log('my id:',g.myid)
     if(choice!=final_choice){
-      d1 = Date()
     db.collection('Players').doc(g.myid).update({
       // data 传入需要局部更新的数据
       data: {
         count:_.inc(1),
         current_choice: _.push(choice),
-        time:_.push(d1),
+        time:_.push(d1.getTime()),
         life:_.push(percent - non_relevant),
         round:_.push(round)
       },

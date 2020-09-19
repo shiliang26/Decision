@@ -2,12 +2,14 @@
   <cover-view class='popup-container {{popupAnimate}}'>
     <cover-view wx:if="{{flag}}"class="wx-popup-title">{{title1}}</cover-view>
     <cover-view wx:else class="wx-popup-title">{{title2}}</cover-view>
+    <cover-image wx:if ="{{change>0}}"class="myicon" src="../../images/yes.jpg"></cover-image>
+    <cover-image wx:else class="myicon" class="myicon" src="../../images/no.jpg"></cover-image>
+    <cover-view class="wx-popup-con-result">{{result}}</cover-view>
     <cover-view class="wx-popup-con" style='white-space:normal;'>{{congrats}}</cover-view>
     <cover-view class="wx-popup-con" wx:if="{{change>0}}" style='white-space:normal;'>{{cave_correct}}</cover-view>
     <cover-view class="wx-popup-con" wx:if="{{change<0}}" style='white-space:normal;'>{{cave_wrong}}</cover-view>
     <cover-view class="wx-popup-con" wx:if="{{extra!=0}}">{{extra_result}}</cover-view>
     <cover-view class="wx-popup-con" wx:if="{{extra==0}}">{{extra_negative}}</cover-view>
-    <cover-view class="wx-popup-con-result">{{result}}</cover-view>
     <cover-view wx:if="{{flag}}" class='textls'>下一轮将在{{wait}}秒后开始</cover-view>
     <cover-view wx:else class='textls'>游戏结束</cover-view>
     <button wx:if="{{!flag}}" class="wx-popup-btn" bindtap='gameover'>{{btn_back}}

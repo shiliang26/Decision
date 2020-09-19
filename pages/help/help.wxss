@@ -8,3 +8,9 @@
   line-height:2em;
   text-indent: 10em;
 }
+
+.myicon{
+  margin-top: 50rpx;
+  display:flex;        
+  justify-content: center; 
+}

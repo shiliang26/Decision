@@ -8,10 +8,16 @@
   height:100vh;
   }
 
+.myicon{
+  width:100rpx;
+  height:100rpx;
+  margin-top:50rpx;
+  margin-left: 250rpx;
+}
+
 .wrap{
   position:fixed;
   top:0;left:0;bottom:0;right:0;
-  
   }
 .popup-container {
   position:fixed;
@@ -25,14 +31,14 @@
   width: 100%;padding: 20rpx 0;text-align: center;font-size: 40rpx;border-bottom: 2rpx solid #89cfea;
   }
 .wx-popup-con {
-  margin: 60rpx 80rpx;
+  margin: 30rpx;
   text-align: center;
   }
 .wx-popup-con-result{
   margin: 60rpx 80rpx;
   text-align: center;
   font-size:50rpx;
-  color:cornflowerblue;
+  color:black;
 }
 .wx-popup-btn {display: flex;justify-content: space-around;margin-bottom: 40rpx;}
 .wrapAnimate{animation: wrapAnimate 1s linear forwards}
